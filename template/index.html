@@ -9,16 +9,19 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
+    <script src= 
+    "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"> 
+        </script> 
 </head>
 <body>
-    <h1>Its BotMe</h1>
+    <h1>Its ChatBot</h1>
 
     <div class="container">
         <div class="col-md-3"></div>
     <div class="boxbody col-md-7" id="my-chat">
 
         <div id="chatbox">
-            <p class="botText"><span>Hi! I'm Chatbot <br/> You can ask me about travelling </span></p>
+            <p class="botText"><span>Hi! I'm Chatbot </span></p>
     
         </div>
     <br>
@@ -34,39 +37,13 @@
 
             </div>
         </div>
-    </div> 
-
-    <script>
-         
-        function getBotResponse(){
-            var rawText = $("#textInput").val();
-            var userHtml = '<p class = "userText"><span>' + rawText + '</span></p>';
-            $("#textInput").val("");
-            $("#chatbox").append(userHtml);
-            document.getElementById('userInput').scrollIntoView({block:'start',behaviour:'smooth'});
-            $.get("/get", {msg:rawText }).done(function(data) {
-            var botHtml = '<p class ="botText"><span>' + data + '</span></p>';
-            $("#chatbox").append(botHtml);
-            document.getElementById('userInput').scrollIntoView({block : 'start',behaviour:'smooth'});
-            });
-        }
-
-        $("#textInput").keypress(function(e) {
-        if(e.which == 13) {
-        getBotResponse();
-        document.getElementById("my-chat").scrollBy(0, 100);
-        }
-        });
-        $("#buttonInput").click(function() {
-        getBotResponse();
-        })
-    </script>
-
     </div>
+    
+</div>
 
     
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <!-- <script type="text/javascript" src="/static/get.js"></script> -->
+    <script type="text/javascript" src="/static/get.js"></script>
 </body>
 </html>
