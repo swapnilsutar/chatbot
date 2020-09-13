@@ -5,11 +5,31 @@ from chatterbot.trainers import ChatterBotCorpusTrainer
 app = Flask(__name__,template_folder="template")
 
 BotMe = ChatBot('BotMe',storage_adapter="chatterbot.storage.SQLStorageAdapter")
+# BotMe = ChatBot('BotMe',storage_adapter = "chatterbot.storage.MongoDatabaseAdapter",
+                     # database = mongodb_name,
+                    #  database_uri = mongodb_uri)
 
 trainer = ChatterBotCorpusTrainer(BotMe)
 # trainer = ListTrainer(BotMe)
 
 trainer.train("trainee/conversations.yml")
+trainer.train("trainee/ai.yml")
+trainer.train("trainee/botprofile.yml")
+trainer.train("trainee/computers.yml")
+trainer.train("trainee/emotion.yml")
+trainer.train("trainee/food.yml")
+trainer.train("trainee/gossip.yml")
+trainer.train("trainee/greetings.yml")
+trainer.train("trainee/health.yml")
+trainer.train("trainee/history.yml")
+trainer.train("trainee/humor.yml")
+trainer.train("trainee/literature.yml")
+trainer.train("trainee/money.yml")
+trainer.train("trainee/movies.yml")
+trainer.train("trainee/psychology.yml")
+trainer.train("trainee/science.yml")
+trainer.train("trainee/sports.yml")
+trainer.train("trainee/trivia.yml")
 
 # trainer.train([
 #     'how are you',
@@ -42,4 +62,4 @@ def get_bot_response():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=False)
