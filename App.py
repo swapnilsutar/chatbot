@@ -41,14 +41,6 @@ trainer.train("trainee/trivia.yml")
 
 @app.route("/")
 def home():
-    # while True:
-    #     try:
-    #         user = input("You: ")
-    #         bot_response = BotMe.get_response(user)
-
-    #         print(bot_response)
-    #     except:
-    #         break
     return render_template("index.html")
 
 @app.route("/get")
