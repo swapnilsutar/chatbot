@@ -7,7 +7,7 @@ app = Flask(__name__,template_folder="template")
 BotMe = ChatBot('BotMe',storage_adapter="chatterbot.storage.SQLStorageAdapter")
 # BotMe = ChatBot('BotMe',storage_adapter = "chatterbot.storage.MongoDatabaseAdapter",
                      # database = mongodb_name,
-                    #  database_uri = mongodb_uri)
+                    #  database_uri = mongodb_uri) this is for heroku database
 
 trainer = ChatterBotCorpusTrainer(BotMe)
 # trainer = ListTrainer(BotMe)
@@ -33,7 +33,6 @@ trainer.train("trainee/trivia.yml")
 
 # trainer.train([
 #     'how are you',
-#     'I am good',
 #     'what is your name',
 #     'people call me BotMe',
 #     'Have a great day',
