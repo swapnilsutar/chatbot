@@ -24,19 +24,11 @@ trainer.train("trainee/health.yml")
 trainer.train("trainee/history.yml")
 trainer.train("trainee/humor.yml")
 trainer.train("trainee/literature.yml")
-trainer.train("trainee/money.yml")
 trainer.train("trainee/movies.yml")
 trainer.train("trainee/psychology.yml")
 trainer.train("trainee/science.yml")
 trainer.train("trainee/sports.yml")
 trainer.train("trainee/trivia.yml")
-
-# trainer.train([
-#     'how are you',
-#     'what is your name',
-#     'people call me BotMe',
-#     'Have a great day',
-# ])
 
 @app.route("/")
 def home():
